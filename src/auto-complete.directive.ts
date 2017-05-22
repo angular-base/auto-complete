@@ -35,6 +35,7 @@ export class AutoCompleteDirective {
 
   private destroy () {
     this.componentRef.destroy();
-    this.componentRef, this.component = undefined;
+    this.componentRef = undefined;
+    this.component = undefined;
   }
 }
