@@ -8,11 +8,11 @@ import { AutoCompleteDirective } from './auto-complete.directive';
 @NgModule({
     imports: [CommonModule, FormsModule],
     declarations: [AutoCompleteComponent, AutoCompleteDirective],
-    exports:  [AutoCompleteComponent, AutoCompleteDirective],
+    exports: [AutoCompleteComponent, AutoCompleteDirective],
     entryComponents: [AutoCompleteComponent]
 })
 export class AutoCompleteModule {
-    static forRoot() {
+    static forRoot () {
         return {
             ngModule: AutoCompleteModule
         }
