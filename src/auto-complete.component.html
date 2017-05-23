@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let data of source | filter: searchQuery">
+  <li *ngFor="let data of autoCompleteFilter(query)">
     {{data.company || data.name}}
   </li>
 </ul>
