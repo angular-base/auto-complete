@@ -1,5 +1,7 @@
-<ul>
-    <li *ngFor="let data of autoCompleteFilter(query)">
-        {{data.company || data.name}}
+<div class="auto-complete">
+  <ul>
+    <li *ngFor="let data of filter(query); let index = index;">
+      <a (click)="confirm(index)">{{data.name}}</a>
     </li>
-</ul>
+  </ul>
+</div>
