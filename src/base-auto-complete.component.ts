@@ -2,8 +2,8 @@ import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/cor
 
 @Component({
     selector: 'base-auto-complete',
-    templateUrl: './auto-complete.component.html',
-    styleUrls: ['./auto-complete.component.scss']
+    templateUrl: './base-auto-complete.component.html',
+    styleUrls: ['./base-auto-complete.component.scss']
 })
 export class AutoCompleteComponent {
 
