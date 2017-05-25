@@ -1,0 +1,29 @@
+// Dependencies
+@import '../../../../node_modules/sassy-lists/dist/SassyLists';
+
+// Utilities
+@import '../../../../node_modules/scss-base/scss/utilities/utilities';
+
+// Settings
+@import '../../../settings';
+
+// Components
+@import '../../../../node_modules/scss-base/scss/components/menu';
+@import '../../../../node_modules/scss-base/scss/components/dropdown-menu';
+
+.auto-complete {
+  background: $dropdownmenu-background;
+  border: $dropdownmenu-border;
+  display: block;
+  position: absolute;
+  min-width: $dropdownmenu-min-width;
+  z-index: 1;
+
+  ul {
+    @include menu-base;
+    @include menu-style;
+
+    // Orientation
+    @include menu-direction(vertical);
+  }
+}
