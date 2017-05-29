@@ -17,8 +17,11 @@ export class BaseAutoCompleteComponent {
   private autoCompleteMenuItems: Array<HTMLElement>;
   private numberOfMatches: number = 0;
   private selectedIndex: number = -1;
+  private element: HTMLElement;
 
-  constructor (private elementRef: ElementRef) {}
+  constructor (private elementRef: ElementRef) {
+    this.element = this.elementRef.nativeElement;
+  }
 
   ngAfterViewChecked () {
     this.autoCompleteMenuItems = this.elementRef.nativeElement.querySelectorAll('li');
@@ -52,7 +55,8 @@ export class BaseAutoCompleteComponent {
   }
 
   public confirm (index: number): void {
-    this.value.emit(this.filteredSource[index]);
+    if (this.filteredSource[index])
+      this.value.emit(this.filteredSource[index]);
   }
 
   public filter (query: string): Array<Object> {
@@ -62,6 +66,7 @@ export class BaseAutoCompleteComponent {
         .some(key => (item[key].toString().toLowerCase()).indexOf(query.toLowerCase()) !== -1)
     );
 
+    this.element.style.visibility = (this.filteredSource.length) ? 'visible' : 'hidden';
     this.numberOfMatches = this.filteredSource.length - 1;
     return this.filteredSource;
   }
