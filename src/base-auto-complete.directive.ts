@@ -41,8 +41,14 @@ export class BaseAutoCompleteDirective {
     }
   }
 
+  @HostListener('blur') onBlur (): void {
+    if (this.component)
+      this.destroy();
+  };
+
   @HostListener('keydown', ['$event']) onKeyDown ($event: any): boolean | void {
-    if (isUndefined(this.component)) return true;
+    if (isUndefined(this.component))
+      return true;
     this.component.onKeyDown($event);
   }
 
