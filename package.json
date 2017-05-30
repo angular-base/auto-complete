@@ -1,0 +1,9 @@
+{
+  "name": "angular-base-auto-complete",
+  "version": "0.0.1",
+  "description": "Auto-complete is an auto-completion for Angular.",
+  "main": "index.js",
+  "repository": "https://github.com/angular-base/auto-complete.git",
+  "author": "Sebastian Kalicki <sebastian@kalicki.email>",
+  "license": "MIT"
+}
