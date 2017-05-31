@@ -36,15 +36,9 @@ export class BaseAutoCompleteDirective {
     if (!isUndefined(changes.ngModel.currentValue)) {
       this.component || this.create();
       this.component.query = changes.ngModel.currentValue;
-      this.value = changes.ngModel.currentValue;
       changes.ngModel.currentValue.length || this.destroy();
     }
   }
-
-  @HostListener('blur') onBlur (): void {
-    if (this.component)
-      this.destroy();
-  };
 
   @HostListener('keydown', ['$event']) onKeyDown ($event: any): boolean | void {
     if (isUndefined(this.component))
